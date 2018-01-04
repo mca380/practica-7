@@ -45,9 +45,9 @@ function C(any, mes){
     }else{
         anyTraspas = false;
     }
-    if (mes.substr(0,3)=="ene"){
+    if (mes == (1 || 01)){
         numMes=1;
-    } else if (mes.substr(0,3)=="feb"){
+    } else if (mes == (2 || 02)){
         numMes=2;
     }
     if (anyTraspas && (numMes==1 || numMes==2)){
