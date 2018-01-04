@@ -1,3 +1,4 @@
+// Es calcula el segle
 function A(any){
     var coeficientSegle;
     
@@ -25,6 +26,8 @@ function A(any){
     }
     return coeficientSegle;
 }
+//Es calcula l'any. Es tenen en compte els darrers dos dígits de l'any introduït.
+//Per això ho passem a string i tenim en compte els dos darrers caràcters. El resultat es divideix en 4 i no es tenen en compte els decimals. 
 function B(any){
     any = any.toString();
     var a = parseInt(any.substr(-2));
@@ -32,6 +35,7 @@ function B(any){
     coeficientAny = a+b;
     return coeficientAny;
 }
+//Es calcula si l'any es traspàs o no. Si el resultat de l'operació és 0 no ho és. Si és -1 sí.
 function C(any, mes){
     var coeficienTraspas;
     var numMes;
@@ -39,12 +43,15 @@ function C(any, mes){
     var multipleDe4 = (any % 4 == 0)
     var multipleDe100 = (any % 100 == 0)
     var multipleDe400 = (any % 400 == 0)
+//Si els dos darrers nombres són múltiples de 4 i no són múltiples de 100 o són múltiples de 400 ho consideram any trapàs. 
+//Per això fem servir una booleana. 
     
     if (multipleDe4 && (!multipleDe100 || multipleDe400) ){
         anyTraspas = true;
     }else{
         anyTraspas = false;
     }
+//A més, també es tenen en compte els mesos (gener i febrer)
     if (mes == (1 || 01)){
         numMes=1;
     } else if (mes == (2 || 02)){
@@ -57,7 +64,7 @@ function C(any, mes){
     }
     return coeficienTraspas;
 }
-
+//Aquí es calculen els mesos. Cada mes té un nombre assignat (coeficient).
 function D(mes){
     var coeficientMes = mes;
     if (mes == (1 || 01)){
@@ -89,11 +96,12 @@ function D(mes){
     return coeficientMes;
     
 }
+//Aquí simplement es té en compte el dia introduït. El nombre introduït serà difrectament el coeficient per a calcular l'algoritme. 
 function E(dia){
     var coeficientDia = dia;
     return coeficientDia;
 }
-
+//Es calcula el resultat. Es sumen tots els coeficients calculats anteriorment. Amb el resultat feim un mod7. 
 function resultat(dia, mes, any){
     
     var coeficients = A(any) + B(any) + C(any,mes) + D(mes) + E(dia);

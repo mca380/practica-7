@@ -7,30 +7,30 @@
 </head>
 <body>
     <script> 
+    //Tots els valors que s'han d'introduir en nombres. Posam parseInt perque ens converteix l'string en integer
         var dia = prompt("Introdueix el dia (nombre)");
         var mes = prompt("Introdueix el mes (paraula)");
         var any = prompt("Introdueix l'any (nombre)");
         dia = parseInt(dia);
         mes = parseInt (mes);
         any = parseInt (any);
-
         
         var resultat = resultat(dia, mes, any);
-        
+        //Dependrà de la suma dels coeficients A, B, C, D, E. Cada resultat té un dia assignat. 
         if (resultat == 0){
-            alert("Dia "+ dia + " de "+mes+ " del " + any + " és diumenge");
+            alert("Dia "+ dia + " del "+mes+ " del " + any + " és diumenge");
         }else if (resultat == 1){
-            alert("Dia "+ dia + " de "+mes+ " del " + any + " és dilluns");
+            alert("Dia "+ dia + " del "+mes+ " del " + any + " és dilluns");
         } else if (resultat == 2){
-            alert("Dia "+ dia + " de "+mes+ " del " + any + " és dimarts");
+            alert("Dia "+ dia + " del "+mes+ " del " + any + " és dimarts");
         }else if (resultat  == 3){
-            alert("Dia "+ dia + " de "+mes+ " del " + any + " és dimecres");
+            alert("Dia "+ dia + " del "+mes+ " del " + any + " és dimecres");
         }else if (resultat  == 4){
-            alert("Dia "+ dia + " de "+mes+ " del " + any + " és dijous");
+            alert("Dia "+ dia + " del "+mes+ " del " + any + " és dijous");
         }else if (resultat  == 5){
-            alert("Dia "+ dia + " de "+mes+ " del " + any + " és divendres");
+            alert("Dia "+ dia + " del "+mes+ " del " + any + " és divendres");
         }else if (resultat  == 6){
-            alert("Dia "+ dia + " de "+mes+ " del " + any + " és dissabte");
+            alert("Dia "+ dia + " del "+mes+ " del " + any + " és dissabte");
         }
         
     </script>
