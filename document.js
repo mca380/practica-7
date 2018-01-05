@@ -43,15 +43,15 @@ function C(any, mes){
     var multipleDe4 = (any % 4 == 0)
     var multipleDe100 = (any % 100 == 0)
     var multipleDe400 = (any % 400 == 0)
-//Si els dos darrers nombres són múltiples de 4 i no són múltiples de 100 o són múltiples de 400 ho consideram any trapàs. 
-//Per això fem servir una booleana. 
+    //Si els dos darrers nombres són múltiples de 4 i no són múltiples de 100 o són múltiples de 400 ho consideram any trapàs. 
+    //Per això fem servir una booleana. 
     
     if (multipleDe4 && (!multipleDe100 || multipleDe400) ){
         anyTraspas = true;
     }else{
         anyTraspas = false;
     }
-//A més, també es tenen en compte els mesos (gener i febrer)
+    //A més, també es tenen en compte els mesos (gener i febrer)
     if (mes == (1 || 01)){
         numMes=1;
     } else if (mes == (2 || 02)){
